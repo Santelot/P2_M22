@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P2-M22</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+
+            const activity2 = document.getElementById('activity-2');
+            const step4Activity3 = document.querySelector('#activity-3 .step-4');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (step4Activity3) step4Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P2-M22</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Aquí se insertarán las actividades -->
+        
+        <div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar que los dispositivos y el espacio estén listos para trabajar.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Verificar que todos los dispositivos (tabletas o computadoras) estén encendidos, conectados a internet, y que Scratch esté abierto en modo "Crear". Confirmar que las Magic Tablets estén disponibles y que el espacio esté organizado para trabajar cómodamente.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No se utiliza diálogo con los estudiantes en esta etapa.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-1" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0,5 minutos):</strong> Proyectar (Diapositiva 1): "¡Bienvenidos, Genios Lógicos!" y saludar a los estudiantes con entusiasmo, mencionando el tema del día.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios Lógicos! 🌟 ¡Qué emoción verlos listos para una nueva aventura en el mundo de Scratch! Hoy vamos a aprender a tomar decisiones en nuestras animaciones usando condicionales. ¡Prepárense para programar con lógica y hacer que sus personajes reaccionen de manera inteligente!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0,5 minutos):</strong> Proyectar (Diapositiva 2): "¡Mi Estado Lógico!" y pedir a los estudiantes que indiquen su estado de ánimo usando poses temáticas relacionadas con la lógica y la programación.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Antes de comenzar, ¡necesito saber cómo se sienten mis genios lógicos! 🤔 Si están listos para resolver cualquier desafío, ¡levanten los brazos como si estuvieran encendiendo un foco de ideas! 💡 Si necesitan un poquito más de energía para pensar, ¡crucen los brazos y hagan cara de programadores concentrados! 💻 ¡A ver esas poses!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0,5 minutos):</strong> Proyectar (Diapositiva 3): "¡Ritual de Agradecimiento Lógico!" y guiar a los estudiantes en el ritual.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Excelente, Genios! Ahora, ¡es momento de nuestro ritual Gnius! Juntemos nuestras manos y digamos juntos: '¡Gracias por estar aquí, Genios! Hoy vamos a crear animaciones con lógica en Scratch. ¡A dar lo mejor de nosotros y a divertirnos programando!'"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (0,5 minutos):</strong> Proyectar (Diapositiva 4): "¡Objetivos Lógicos de Hoy!" y explicar los objetivos de la misión de manera clara y sencilla.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Y ahora, los <span style="color: red; font-weight: bold;">objetivos</span> de nuestra misión de hoy! 1. Vamos a aprender a usar los bloques condicionales 'si, entonces' en Scratch para que nuestros personajes tomen decisiones. 2. ¡Vamos a crear animaciones donde nuestros personajes reaccionen de manera inteligente y lógica a diferentes situaciones! ¿Listos para este reto lógico?"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-2" class="activity" data-time="4">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">💡 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Ejercicio interactivo para activar el cerebro con movimiento y decisiones lógicas.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 5): "¡Activando Nuestra Lógica!" y explicar que combinarán movimiento y decisiones para activar el cerebro.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios Lógicos! 🚀 Vamos a activar nuestros cerebros para programar con lógica. Hoy combinaremos <span style="color: red; font-weight: bold;">movimiento</span> y <span style="color: red; font-weight: bold;">decisiones</span> para preparar nuestras mentes para crear animaciones con condicionales. ¿Listos para decidir cómo vamos a movernos?"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (1.5 minutos):</strong> Proyectar (Diapositiva 6): "¡Mi Secuencia de Decisiones!" y dar las instrucciones para la creación de la secuencia con movimientos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora vamos a crear nuestra propia <span style="color: red; font-weight: bold;">secuencia</span> de movimientos con <span style="color: red; font-weight: bold;">decisiones</span>! Piensen en una situación donde su cuerpo deba tomar una decisión. Por ejemplo:<br>
+                    - Si escuchan un sonido, saltan.<br>
+                    - Si ven una luz, giran.<br>
+                    - Si sienten el suelo, caminan.<br>
+                    Piensen en al menos tres <span style="color: red; font-weight: bold;">movimientos</span> y <span style="color: red; font-weight: bold;">decisiones</span>, luego muéstrenmelos. ¡A crear con lógica y movimiento!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (1.5 minutos):</strong> Proyectar (Diapositiva 7): "¡Decisiones en Acción!" y pedir a los estudiantes que realicen su secuencia de movimientos y describan la decisión lógica que están representando.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Impresionante, Genios! Ahora, uno por uno, muéstrenme su <span style="color: red; font-weight: bold;">secuencia</span> de <span style="color: red; font-weight: bold;">movimientos</span> mientras describen brevemente la <span style="color: red; font-weight: bold;">decisión lógica</span> que representa. ¡Compartan sus decisiones y prepárense para programarlas en Scratch!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-3" class="activity" data-time="30">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Desafío para crear animaciones con lógica y condicionales en Scratch.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 8): "¡El Gran Desafío de las Decisiones!" y presentar el desafío con la temática unificada, los nombres de los retos y los tres niveles (Rookie, Master, Hacker).
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la lógica, ha llegado el momento de programar decisiones en Scratch! 🚀 Hoy usaremos los bloques condicionales para que nuestros personajes reaccionen de manera inteligente. Tenemos tres desafíos emocionantes: 'Si me Toca, ¡Reacciono!' (Rookie), 'Si es de Día, ¡Salgo a Jugar!' (Master) y 'Si Toco el Color, ¡Sigo el Camino!' (Hacker). ¡A elegir su reto lógico y a programar!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar (Diapositiva 9): "¡Detalles de los Retos Lógicos!" Describir los pasos y metas específicas de cada nivel.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    """¡Aquí están los detalles de cada desafío para que elijan su camino!<br><br>
+                    <strong>Nivel Rookie: 'Si me Toca, ¡Reacciono!'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Crear una animación donde un personaje cambie de apariencia si es tocado por el ratón.<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Abre un nuevo proyecto en Scratch. Elige un personaje (sprite). Programa al personaje para que:<br>
+                    - Use el bloque "por siempre" para que la acción se repita.<br>
+                    - Utilice un bloque condicional "si <condición> entonces" donde la condición sea "tocando el puntero del ratón".<br>
+                    - Cambie de disfraz o color al ser tocado.<br>
+                    <span style="color: red; font-weight: bold;">Condiciones:</span> Debe usar un bloque condicional "si, entonces".<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Usa un disfraz diferente para que el cambio sea más evidente.<br><br>
+
+                    <strong>Nivel Master: 'Si es de Día, ¡Salgo a Jugar!'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Crear una animación donde un personaje realice acciones diferentes según el fondo.<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Crea dos fondos: día y noche. Programa al personaje para que:<br>
+                    - Cambie su acción dependiendo del fondo actual usando "si <condición> entonces, sino".<br>
+                    - Realice una acción como caminar durante el día y dormir durante la noche.<br>
+                    <span style="color: red; font-weight: bold;">Condiciones:</span> Debe usar un bloque "si, entonces, sino".<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Usa disfraces diferentes para hacer más evidente la acción.<br><br>
+
+                    <strong>Nivel Hacker: 'Si Toco el Color, ¡Sigo el Camino!'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Crear un juego donde un personaje tome decisiones basadas en el color que toca.<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña un fondo con caminos de diferentes colores. Programa al personaje para que:<br>
+                    - Cambie de dirección o acción según el color que toque (por ejemplo: toca verde = derecha, rojo = izquierda).<br>
+                    <span style="color: red; font-weight: bold;">Condiciones:</span> Debe usar bloques "si, entonces".<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Usa movimientos visibles y cambios de disfraces para que las acciones sean claras."""
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (20 minutos):</strong> Proyectar (Diapositiva 10): "¡A Programar Decisiones, Genios!" Temporizador de 20 minutos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Es su turno, genios de la lógica! 🚀 Tienen 20 minutos para programar sus animaciones con condicionales en Scratch. Recuerden los nombres de sus retos y dejen que su lógica guíe la programación. ¡La magia de las decisiones está en sus manos!"
+                </td>
+            </tr>
+            <tr class="step-4">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (5 minutos):</strong> Proyectar (Diapositiva 11): "¡Ajustes Lógicos Finales!" Temporizador de 5 minutos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Grandes programadores, es momento de pulir sus animaciones! ⏱️ Tienen 5 minutos para probar y ajustar sus proyectos. Asegúrense de que las decisiones de sus personajes sean lógicas y de que sus acciones sean las correctas. ¡A perfeccionar sus mundos lógicos!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (2 minutos):</strong> Proyectar (Diapositiva 12): Reflexionar sobre el proceso creativo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Impresionante trabajo, genios de la lógica! 🌟 Reflexionemos juntos: ¿Qué aprendieron al programar con condicionales? ¿Qué fue lo más desafiante y cómo lo superaron? ¿Qué consejo le darían a otros programadores de decisiones? ¡Compartan sus reflexiones y celebremos sus logros!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-4" class="activity" data-time="10">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Trabajo colaborativo para enriquecer animaciones lógicas.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0,5 minutos):</strong> Proyectar (Diapositiva 14): "¡Mentes Lógicas Unidas!" Mostrar instrucciones para formar equipos pequeños y explicar que se compartirán las animaciones y se darán ideas para mejorarlas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la lógica, es hora de unir nuestras mentes brillantes! 🌟 Formen equipos de dos o tres programadores para compartir sus animaciones y darnos ideas lógicas. Juntos podemos hacer que cada animación sea aún más inteligente."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0,5 minutos):</strong> Proyectar (Diapositiva 15): "¡Equipos Lógicos en 30 Segundos!" Temporizador de 30 segundos para formar los equipos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 30 segundos para unirse a sus compañeros de programación! ⏱️ Busquen sus equipos rápidamente y prepárense para una lluvia de ideas lógicas. ¡Equipos listos, animaciones listas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0,5 minutos):</strong> Proyectar (Diapositiva 16): "¡Magic Tablets de Ideas Lógicas!" Explicar la importancia de usar las Magic Tablets para registrar ideas clave y preparar las mejoras de las animaciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Programadores, saquen sus Magic Tablets! 📝 Anoten todas las ideas lógicas que les inspiren de las animaciones de sus compañeros. Recuerden que cada decisión cuenta para hacer que la programación sea más inteligente. ¡Sus notas serán la clave para mejorar!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (0,5 minutos):</strong> Proyectar (Diapositiva 17): "¡Listos para Programar con Lógica!" Temporizador de 30 segundos para recoger las Magic Tablets.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 30 segundos para tomar sus Magic Tablets y prepararse para inspirar y ser inspirados con lógica! ¡Manos a la obra, genios de la programación!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (4 minutos):</strong> Proyectar (Diapositiva 18): "¡Think-Pair-Share: Lógica en Equipo!" Explicar el método <span style="color: red; font-weight: bold;">Think-Pair-Share</span> y guiar a los equipos para reflexionar y colaborar para mejorar las animaciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Vamos a usar el poder del <span style="color: red; font-weight: bold;">Think-Pair-Share</span> para mejorar nuestras animaciones! Primero, piensen individualmente en cómo mejorarían la lógica de la animación de su compañero. Luego, compartan esas ideas y elijan las mejores. ¡Finalmente, trabajen juntos para implementar esos cambios y hacer que sus animaciones sean aún más inteligentes!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (3 minutos):</strong> Proyectar (Diapositiva 19): "¡Optimizando la Lógica de Nuestras Animaciones!" Instrucciones para la colaboración activa con un temporizador de 3 minutos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Manos a la obra, programadores! ⏱️ Tienen 3 minutos para aplicar las mejoras que discutieron. Recuerden que cada decisión lógica cuenta para que su animación sea aún más inteligente y efectiva. ¡A trabajar en equipo con toda su lógica creativa!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7 (1 minuto):</strong> Proyectar (Diapositiva 20): "¡Reflexiones de Equipo Lógico!" Preguntas para reflexionar sobre la colaboración y los resultados.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Reflexionemos sobre esta aventura de programación! ¿Qué aprendieron trabajando juntos? ¿Cómo hicieron que la lógica de las animaciones de sus compañeros fuera aún más inteligente? ¿Cuál fue la mejor idea que surgió de esta colaboración? ¡Compartan su sabiduría y celebremos el poder de la programación lógica colectiva!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-5" class="activity" data-time="4">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0,5 minutos):</strong> Proyectar (Diapositiva 21): "¡Misión Lógica Cumplida, Programadores!" Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la lógica, llegó el momento de celebrar nuestras increíbles animaciones! 🌟 Revisemos juntos nuestros <span style="color: red; font-weight: bold;">objetivos</span>: ¿Aprendimos a usar los bloques condicionales 'si, entonces' en Scratch? ¿Creamos animaciones donde nuestros personajes reaccionan de manera inteligente y lógica? ¡Estoy seguro de que cada uno hizo un trabajo brillante! ¿Cómo se sienten al respecto?"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0,5 minutos):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy, todos fueron increíbles programadores de decisiones. Dieron vida a animaciones con lógica, exploraron el poder de los condicionales y trabajaron en equipo como verdaderos genios. ¡Estoy muy orgulloso de todos los programadores lógicos que hay aquí! ¡Un aplauso para su creatividad, lógica y dedicación!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (3 minutos):</strong> Proyectar (Diapositiva 22): "¡Honremos Nuestro Espacio Lógico!" Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora, como verdaderos programadores, debemos honrar nuestro espacio de trabajo. Recojan sus Magic Tablets y todos los materiales que usamos, y dejen el aula lista para nuevas aventuras lógicas. ¡Recuerden que cuidar nuestro espacio es parte de la magia de la programación!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+    </div>
+</body>
+</html>
